@@ -18,7 +18,7 @@ project "GLFW"
         "src/window.c"
     }
     
-    filter "systen:windows"
+    filter "system:windows"
         buildoptions { "-std=c11", "-lgdi32" }
         systemversion "latest"
         staticruntime "On"
