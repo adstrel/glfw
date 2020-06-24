@@ -1721,6 +1721,21 @@ const char* _glfwPlatformGetClipboardString(void)
     } // autoreleasepool
 }
 
+EGLenum _glfwPlatformGetEGLPlatform(void)
+{
+    return 0;
+}
+
+EGLNativeDisplayType _glfwPlatformGetEGLNativeDisplay(void)
+{
+    return EGL_DEFAULT_DISPLAY;
+}
+
+EGLNativeWindowType _glfwPlatformGetEGLNativeWindow(_GLFWwindow* window)
+{
+    return window->ns.layer;
+}
+
 void _glfwPlatformGetRequiredInstanceExtensions(char** extensions)
 {
     if (_glfw.vk.KHR_surface && _glfw.vk.EXT_metal_surface)

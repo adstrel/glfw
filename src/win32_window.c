@@ -2186,6 +2186,21 @@ const char* _glfwPlatformGetClipboardString(void)
     return _glfw.win32.clipboardString;
 }
 
+EGLenum _glfwPlatformGetEGLPlatform(void)
+{
+    return 0;
+}
+
+EGLNativeDisplayType _glfwPlatformGetEGLNativeDisplay(void)
+{
+    return GetDC(_glfw.win32.helperWindowHandle);
+}
+
+EGLNativeWindowType _glfwPlatformGetEGLNativeWindow(_GLFWwindow* window)
+{
+    return window->win32.handle;
+}
+
 void _glfwPlatformGetRequiredInstanceExtensions(char** extensions)
 {
     if (!_glfw.vk.KHR_surface || !_glfw.vk.KHR_win32_surface)
