@@ -1,4 +1,4 @@
-project "GLFW"
+project "glfw"
     kind "StaticLib"
     language "C"
     staticruntime "on"
@@ -21,7 +21,11 @@ project "GLFW"
     
     filter "system:windows"
         systemversion "latest"
-        
+
+        defines
+        {
+        }
+
         files
         {
             "src/win32_init.c",
@@ -34,17 +38,30 @@ project "GLFW"
             "src/egl_context.c",
             "src/osmesa_context.c"
         }
-        
-        defines
-        {
-            "_GLFW_WIN32",
-            "_CRT_SECURE_NO_WARNINGS"
-        }
-    
+
     filter "configurations:Debug"
         runtime "Debug"
+        defines 
+        {
+            "WAPP_DEBUG"
+        }
+        optimize "off"
         symbols "on"
 
     filter "configurations:Release"
         runtime "Release"
+        defines 
+        {
+            "WAPP_DEBUG"
+        }
         optimize "on"
+        symbols "on"
+
+    filter "configurations:Dist"
+        runtime "Release"
+        defines 
+        {
+            "WAPP_DIST"
+        }
+        optimize "on"
+        symbols "off"
