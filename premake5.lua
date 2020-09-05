@@ -1,7 +1,7 @@
 project "glfw"
     kind "StaticLib"
     language "C"
-    staticruntime "on"
+    staticruntime "On"
     
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -43,15 +43,24 @@ project "glfw"
 
     filter "configurations:Debug"
         runtime "Debug"
-        optimize "off"
-        symbols "on"
+        optimize "Off"
+        symbols "On"
 
     filter "configurations:Release"
         runtime "Release"
-        optimize "on"
-        symbols "on"
+        optimize "Speed"
+        symbols "On"
+        flags
+        {
+            "LinkTimeOptimization"
+        }
 
     filter "configurations:Dist"
         runtime "Release"
-        optimize "on"
-        symbols "off"
+        optimize "Speed"
+        symbols "Off"
+        flags
+        {
+            "LinkTimeOptimization",
+            "FatalWarnings"
+        }
