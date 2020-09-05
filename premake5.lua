@@ -43,27 +43,15 @@ project "glfw"
 
     filter "configurations:Debug"
         runtime "Debug"
-        defines 
-        {
-            "WAPP_DEBUG"
-        }
         optimize "off"
         symbols "on"
 
     filter "configurations:Release"
         runtime "Release"
-        defines 
-        {
-            "WAPP_DEBUG"
-        }
         optimize "on"
         symbols "on"
 
     filter "configurations:Dist"
         runtime "Release"
-        defines 
-        {
-            "WAPP_DIST"
-        }
         optimize "on"
         symbols "off"
