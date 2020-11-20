@@ -61,26 +61,26 @@ project "glfw"
 
         files
         {
-            "x11_platform.h",
-            "xkb_unicode.h",
-            "posix_time.h",
-            "posix_thread.h",
-            "glx_context.h",
-            "egl_context.h",
-            "osmesa_context.h",
+            "src/x11_platform.h",
+            "src/xkb_unicode.h",
+            "src/posix_time.h",
+            "src/posix_thread.h",
+            "src/glx_context.h",
+            "src/egl_context.h",
+            "src/osmesa_context.h",
 
-            "x11_init.c",
-            "x11_monitor.c",
-            "x11_window.c",
-            "xkb_unicode.c",
-            "posix_time.c",
-            "posix_thread.c",
-            "glx_context.c",
-            "egl_context.c",
-            "osmesa_context.c",
+            "src/x11_init.c",
+            "src/x11_monitor.c",
+            "src/x11_window.c",
+            "src/xkb_unicode.c",
+            "src/posix_time.c",
+            "src/posix_thread.c",
+            "src/glx_context.c",
+            "src/egl_context.c",
+            "src/osmesa_context.c",
 
-            "linux_joystick.h",
-            "linux_joystick.c"
+            "src/linux_joystick.h",
+            "src/linux_joystick.c"
         }
 
     filter "configurations:Debug"
