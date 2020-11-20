@@ -10,7 +10,12 @@ project "glfw"
     {
         "include/GLFW/glfw3.h",
         "include/GLFW/glfw3native.h",
+
         "src/glfw_config.h",
+
+        "src/internal.h",
+        "src/mappings.h",
+
         "src/context.c",
         "src/init.c",
         "src/input.c",
@@ -30,6 +35,12 @@ project "glfw"
 
         files
         {
+            "src/win32_platform.h",
+            "src/win32_joystick.h",
+            "src/wgl_context.h",
+            "src/egl_context.h",
+            "src/osmesa_context.h",
+
             "src/win32_init.c",
             "src/win32_joystick.c",
             "src/win32_monitor.c",
@@ -39,6 +50,37 @@ project "glfw"
             "src/wgl_context.c",
             "src/egl_context.c",
             "src/osmesa_context.c"
+        }
+
+    filter "system:linux"
+        defines
+        {
+            "_GLFW_X11",
+            "_CRT_SECURE_NO_WARNINGS"
+        }
+
+        files
+        {
+            "x11_platform.h",
+            "xkb_unicode.h",
+            "posix_time.h",
+            "posix_thread.h",
+            "glx_context.h",
+            "egl_context.h",
+            "osmesa_context.h",
+
+            "x11_init.c",
+            "x11_monitor.c",
+            "x11_window.c",
+            "xkb_unicode.c",
+            "posix_time.c",
+            "posix_thread.c",
+            "glx_context.c",
+            "egl_context.c",
+            "osmesa_context.c",
+
+            "linux_joystick.h",
+            "linux_joystick.c"
         }
 
     filter "configurations:Debug"
