@@ -89,8 +89,9 @@ project "glfw"
         symbols "On"
 
     filter "configurations:Release"
-        runtime "Release"
+        runtime "Debug"
         optimize "Speed"
+        vectorextensions "AVX2"
         symbols "On"
         flags
         {
@@ -100,6 +101,7 @@ project "glfw"
     filter "configurations:Dist"
         runtime "Release"
         optimize "Speed"
+        vectorextensions "AVX2"
         symbols "Off"
         flags
         {
